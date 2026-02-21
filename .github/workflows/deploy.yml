@@ -21,7 +21,14 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
-
+      # NEW STEP - Save WAR as Artifact
+      - name: Upload WAR as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: myapp-war
+          path: target/*.war
+          retention-days: 5
+          
       - name: Copy WAR to EC2
         uses: appleboy/scp-action@v0.1.4
         with:
