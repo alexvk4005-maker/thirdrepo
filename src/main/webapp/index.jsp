@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+  </head>
   <body>
-    <h1>Finally i deployed application into tomacat 🎉</h1>
+    <h1>Hello! My App is Running on Tomcat! 🎉</h1>
   </body>
 </html>
