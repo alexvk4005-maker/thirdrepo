@@ -21,6 +21,16 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
+       - name: SonarQube Scan
+        run: |
+          mvn sonar:sonar \
+          -Dsonar.projectKey=alexvk4005-maker_thirdrepo \
+          -Dsonar.organization=rafi-devops \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+
+        
       # NEW STEP - Save WAR as Artifact
       - name: Upload WAR as Artifact
         uses: actions/upload-artifact@v4
